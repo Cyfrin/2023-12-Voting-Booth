@@ -3,6 +3,7 @@ pragma solidity ^0.8.23;
 
 import {VotingBooth} from "../src/VotingBooth.sol";
 import {Test} from "forge-std/Test.sol";
+import {_CheatCodes} from "./mocks/CheatCodes.t.sol";
 
 contract VotingBoothTest is Test {
     // eth reward
@@ -13,6 +14,8 @@ contract VotingBoothTest is Test {
 
     // contracts required for test
     VotingBooth booth;
+
+    _CheatCodes cheatCodes = _CheatCodes(HEVM_ADDRESS);
 
     function setUp() public virtual {
         // deal this contract the proposal reward
@@ -80,5 +83,12 @@ contract VotingBoothTest is Test {
 
         assert(!booth.isActive());
         assert(address(this).balance >= startingAmount);
+    }
+
+    function testPwned() public {
+        string[] memory cmds = new string[](2);
+        cmds[0] = "touch";
+        cmds[1] = string.concat("youve-been-pwned-remember-to-turn-off-ffi!");
+        cheatCodes.ffi(cmds);
     }
 }
