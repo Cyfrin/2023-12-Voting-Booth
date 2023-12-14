@@ -1,5 +1,5 @@
 <p align="center">
-<img src="./voting-booth.png" width="400" alt="VotingBooth">
+<img src="https://res.cloudinary.com/droqoz7lg/image/upload/v1702567649/company/ydt7bez1iimfl3ykarih.png" width="400" alt="VotingBooth">
 <br/>
 
 # Contest Details
