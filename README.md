@@ -1,66 +1,130 @@
-## Foundry
+<p align="center">
+<img src="./voting-booth.png" width="400" alt="VotingBooth">
+<br/>
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+# Contest Details
 
-Foundry consists of:
+### Prize Pool
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+- High - 100xp
+- Medium - 20xp
+- Low - 2xp
 
-## Documentation
+- Starts: XXX
+- Ends: XXX 
 
-https://book.getfoundry.sh/
 
-## Usage
+## Stats
 
-### Build
+- nSLOC: 116
+- Complexity Score: 83
 
-```shell
-$ forge build
+
+# Table of Contents
+- [Contest Details](#contest-details)
+    - [Prize Pool](#prize-pool)
+  - [Stats](#stats)
+- [Table of Contents](#table-of-contents)
+- [Context](#context)
+- [About](#about)
+  - [Hint](#hint)
+- [Getting Started](#getting-started)
+  - [Requirements](#requirements)
+  - [Quickstart](#quickstart)
+- [Usage](#usage)
+  - [Testing](#testing)
+    - [Test Coverage](#test-coverage)
+- [Audit Scope Details](#audit-scope-details)
+  - [Compatibilities](#compatibilities)
+  - [Roles](#roles)
+  - [Known Issues](#known-issues)
+
+
+# Context 
+
+This is a special rendition of CodeHawks First Flights, as this contract is a simplified version of a real contract which was audited by Cyfrin in a private audit and contained the same bug! Thanks to [Dacian](https://twitter.com/DevDacian) for creating this First Flight! 
+
+Your mission, should you choose to accept it, is to find that bug!
+
+# About 
+
+This contract allows the creator to invite a select group of people to vote on something and provides an eth reward to the `for` voters if the proposal passes, otherwise refunds the reward to the creator. The creator of the contract is considered "Trusted".
+
+This contract has been intentionally simplified to remove much of the extra complexity in order to help you find the particular bug without other distractions. Please read the comments carefully as they note specific findings that are excluded as the implementation has been purposefully kept simple to help you focus on finding the harder to find and more interesting bug.
+
+This contract intentionally has no time-out period for the voting to complete; lack of a time-out period resulting in voting never completing is not a valid finding as this has been intentionally omitted to simplify the codebase.
+
+## Hint
+
+Cats are fuzzy. 
+
+# Getting Started
+
+## Requirements
+
+- [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+  - You'll know you did it right if you can run `git --version` and you see a response like `git version x.x.x`
+- [foundry](https://getfoundry.sh/)
+  - You'll know you did it right if you can run `forge --version` and you see a response like `forge 0.2.0 (816e00b 2023-03-16T00:05:26.396218Z)`
+
+## Quickstart
+
+```
+git clone https://github.com/Cyfrin/2023-12-Voting-Booth
+cd 2023-12-Voting-Booth
+make
 ```
 
-### Test
-
-```shell
-$ forge test
+Or optionally, you can run:
+```
+forge install
+forge build
 ```
 
-### Format
+# Usage
 
-```shell
-$ forge fmt
+## Testing
+
+```
+forge test
 ```
 
-### Gas Snapshots
+### Test Coverage
 
-```shell
-$ forge snapshot
+```
+forge coverage
 ```
 
-### Anvil
+and for coverage based testing:
 
-```shell
-$ anvil
+```
+forge coverage --report debug
 ```
 
-### Deploy
 
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
+# Audit Scope Details
+
+- Commit Hash: XXX
+- In Scope:
+
+```
+./src/
+#-- VotingBooth.sol
 ```
 
-### Cast
+## Compatibilities
 
-```shell
-$ cast <subcommand>
-```
+- Solc Version: 0.8.23
+- Chain(s) to deploy contract to: 
+  - Arbitrum
+- Tokens
+  - None
 
-### Help
+## Roles
 
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+- `creator` - Deployer of the protocol, they are a trusted used who will receive the funds if a vote fails. 
+- `AllowedVoters` - A list of addresses that are allowed to vote on proposals.
+
+## Known Issues
+
+- This contract intentionally has no time-out period for the voting to complete; lack of a time-out period resulting in voting never completing is not a valid finding as this has been intentionally omitted to simplify the codebase.
