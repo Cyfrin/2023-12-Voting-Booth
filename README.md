@@ -16,8 +16,8 @@
 
 ## Stats
 
-- nSLOC: 116
-- Complexity Score: 83
+- nSLOC: 80
+- Complexity Score: 67
 
 
 # Table of Contents
@@ -104,7 +104,7 @@ forge coverage --report debug
 
 # Audit Scope Details
 
-- Commit Hash: XXX
+- Commit Hash: 5b9554656d53baa2086ab7c74faf8bdeaf81a8b7
 - In Scope:
 
 ```
