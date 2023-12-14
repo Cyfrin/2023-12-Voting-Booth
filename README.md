@@ -10,8 +10,8 @@
 - Medium - 20xp
 - Low - 2xp
 
-- Starts: XXX
-- Ends: XXX 
+- Starts: December 15, Noon UTC
+- Ends: December 22, Noon UTC 
 
 
 ## Stats
