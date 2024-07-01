@@ -1,4 +1,4 @@
-# First Flight #7: Voting Booth
+# First Flight #6: Voting Booth
 
 # Table of Contents
 - [Contest Details](#contest-details)
