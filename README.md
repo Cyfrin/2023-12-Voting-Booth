@@ -19,8 +19,6 @@
   - [Roles](#roles)
   - [Known Issues](#known-issues)
 
-[//]: # (contest-details-open)
-
 # Contest Details
 
 ### Prize Pool
@@ -36,6 +34,8 @@
 
 - nSLOC: 80
 - Complexity Score: 67
+
+[//]: # (contest-details-open)
 
 # Context 
 
