@@ -1,24 +1,4 @@
-<p align="center">
-<img src="https://res.cloudinary.com/droqoz7lg/image/upload/v1702567649/company/ydt7bez1iimfl3ykarih.png" width="400" alt="VotingBooth">
-<br/>
-
-# Contest Details
-
-### Prize Pool
-
-- High - 100xp
-- Medium - 20xp
-- Low - 2xp
-
-- Starts: December 15, Noon UTC
-- Ends: December 22, Noon UTC 
-
-
-## Stats
-
-- nSLOC: 80
-- Complexity Score: 67
-
+# First Flight #7: Voting Booth
 
 # Table of Contents
 - [Contest Details](#contest-details)
@@ -39,6 +19,23 @@
   - [Roles](#roles)
   - [Known Issues](#known-issues)
 
+[//]: # (contest-details-open)
+
+# Contest Details
+
+### Prize Pool
+
+- High - 100xp
+- Medium - 20xp
+- Low - 2xp
+
+- Starts: December 15, Noon UTC
+- Ends: December 22, Noon UTC 
+
+## Stats
+
+- nSLOC: 80
+- Complexity Score: 67
 
 # Context 
 
@@ -56,7 +53,16 @@ This contract intentionally has no time-out period for the voting to complete; l
 
 ## Hint
 
-Cats are fuzzy. 
+Cats are fuzzy.
+
+## Roles
+
+- `creator` - Deployer of the protocol, they are a trusted used who will receive the funds if a vote fails. 
+- `AllowedVoters` - A list of addresses that are allowed to vote on proposals.
+
+[//]: # (contest-details-close)
+
+[//]: # (getting-started-open)
 
 # Getting Started
 
@@ -101,6 +107,9 @@ and for coverage based testing:
 forge coverage --report debug
 ```
 
+[//]: # (getting-started-close)
+
+[//]: # (scope-open)
 
 # Audit Scope Details
 
@@ -120,11 +129,13 @@ forge coverage --report debug
 - Tokens
   - None
 
-## Roles
+[//]: # (scope-close)
 
-- `creator` - Deployer of the protocol, they are a trusted used who will receive the funds if a vote fails. 
-- `AllowedVoters` - A list of addresses that are allowed to vote on proposals.
+[//]: # (known-issues-open)
 
 ## Known Issues
 
 - This contract intentionally has no time-out period for the voting to complete; lack of a time-out period resulting in voting never completing is not a valid finding as this has been intentionally omitted to simplify the codebase.
+
+
+[//]: # (known-issues-close)
